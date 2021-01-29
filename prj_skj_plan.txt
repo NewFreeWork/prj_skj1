@@ -41,16 +41,30 @@
 
 *진행중
 -사명 및 엠블럼 제작
+21/01/29
+엠블럼 종이비행기 키캡 두리안
+
 
 -노트북으로 서버만들기
-21/01/27
-ubuntu로 서버제작(멀티부팅)
+21/01/29
 간단한 확인은 윈도우의 wsl2로 확인
+ddns(DuckDns) 
++ ubuntu ->ok
++ docker(docker compose) ->ok
++ ngnix 
++ django(python+virtuslenv+mariaDB) 
++ gunicorn 
++ rest api(django-rest-framework)
+
 
 -웹프레임워크
-django
+ddns(DuckDns) + ubuntu + docker(docker compose) + ngnix + django(python+virtuslenv+mariaDB) + gunicorn +rest api(django-rest-framework)로 진행중...
 
 -소규모파일관리프로그램
+
+
+*진행완료
+ubuntu로 서버제작(멀티부팅) ok
 
 
 *구현기능
