@@ -1,0 +1,10 @@
+*prj_skj1
+ 
+admin username : admin
+admin password : password123
+
+
+*django rest framework 작업
+https://www.django-rest-framework.org/tutorial/quickstart/
+
+

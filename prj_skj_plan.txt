@@ -52,9 +52,9 @@ ddns(DuckDns)
 + ubuntu ->ok
 + docker(docker compose) ->ok
 + ngnix 
-+ django(python+virtuslenv+mariaDB) 
++ django(python+virtuslenv+mariaDB)  -> 마리아db는 설치필요
 + gunicorn 
-+ rest api(django-rest-framework)
++ rest api(django-rest-framework) ->ok
 
 
 -웹프레임워크
