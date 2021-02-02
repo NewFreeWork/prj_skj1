@@ -8,3 +8,20 @@ admin password : password123
 https://www.django-rest-framework.org/tutorial/quickstart/
 
 
+*가상환경(virtualenv) 사용방법
+시작
+source activate
+종료
+deactivate
+
+*gunicorn 사용방법
+gunicorn prj_skj1_django.wsgi:application --bind 127.0.0.1:8000 --daemon --reload
+
+*nginx 사용방법
+service nginx start
+
+
+*스마트 깃 백그라운드로 실행하는 방법
+nohup smartgit &
+
+
