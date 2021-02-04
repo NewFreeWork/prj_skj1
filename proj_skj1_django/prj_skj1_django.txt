@@ -25,3 +25,11 @@ service nginx start
 nohup smartgit &
 
 
+*ddns
+일단 아이피타임으로 사용
+host이름 : threeDevLab
+사용자id(이메일주소) : kihunopha@gmail.com
+사용자 암호 :20080136
+
+
+
