@@ -1,6 +1,10 @@
 *설립
 주소지
 
+
+***** 사업 목표 *****
+!!!!! 머니 머신 개발 !!!!!
+
 *사업내용
 1.서버시스템 설치 및 erp구축
 
@@ -40,31 +44,40 @@
 
 
 *진행중
+
+-더하기 프로그램 진행중(jscho)
+
+-노트북으로 서버만들기(khlee)
+21/01/29
+간단한 확인은 윈도우의 wsl2로 확인 ->ok
+ddns(DuckDns) -> 임시로 iptime으로 서버제작
++ ubuntu ->ok
++ docker(docker compose) ->ok
++ ngnix ->ok
++ django(python+virtuslenv+mariaDB)  -> 마리아db는 설치필요
++ gunicorn ->ok
++ rest api(django-rest-framework) ->ok
+
+-안드로이드 + restapi + server 조합으로 파일 입출력 및 기본 기능 확인(khlee)
+-집에서 개발환경 구축(khlee, sblee, jscho)
+
+
+-소규모파일관리프로그램(sblee)
+
+-서버홈페이지 구성 구상(서버 부하 생각 해서...)
+블로그형식 + 앱 + 앱 커뮤니티 
+소개 홈페이지만 + 앱 + 앱 커뮤니티
+
+*진행완료
 -사명 및 엠블럼 제작
+21/02/05
+일단 키캡으로 임시 엠블럼 제작 완료
+사명도 임시로 three developers lab으로 내가 결정 ㅋ
+
+ubuntu로 서버제작(멀티부팅) ok
 21/01/29
 엠블럼 종이비행기 키캡 두리안
 
-
--노트북으로 서버만들기
-21/01/29
-간단한 확인은 윈도우의 wsl2로 확인
-ddns(DuckDns) 
-+ ubuntu ->ok
-+ docker(docker compose) ->ok
-+ ngnix 
-+ django(python+virtuslenv+mariaDB)  -> 마리아db는 설치필요
-+ gunicorn 
-+ rest api(django-rest-framework) ->ok
-
-
--웹프레임워크
-ddns(DuckDns) + ubuntu + docker(docker compose) + ngnix + django(python+virtuslenv+mariaDB) + gunicorn +rest api(django-rest-framework)로 진행중...
-
--소규모파일관리프로그램
-
-
-*진행완료
-ubuntu로 서버제작(멀티부팅) ok
 
 
 *구현기능
@@ -77,6 +90,9 @@ python
 java
 mysql
 php
+kotlin
+html
+
 
 
 *사용툴
@@ -88,11 +104,9 @@ git
 웹분야
 1.회사에서 인력을 최소화하기위한 업무
 2.사이트유지보수
-
 시장분야는 it서비스가 크다
+
 공공부문sw/itc장비 기관별 발주 비중->국가기관 공공기관 지자체 교육기관
-
-
 분야별 인력
 클라우드서비스
 빅데이터
@@ -135,4 +149,3 @@ html 아이콘:fontawesome.com
 실제로 필요할때 무조건 구현하되, 그저 필요할 것이라고 예상할때는 절대 구현하지 말라.
 무엇을 추가하려고 하지 말고 무엇을 덜어낼지 생각하라
 정말로 필요한 기능인지 다시한번 또 한번 우선순위를 정하고 고민해봐라
-
