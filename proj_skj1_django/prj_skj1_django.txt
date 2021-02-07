@@ -1,5 +1,12 @@
-*prj_skj1
- 
+*새로운환경에서 작업할때 순서
+1.파이썬을 설치한다.
+2.가상환경 virtualenv를 설치한다.
+3.가상환경 virtualenv로 만든다음에 한개의 가상환경 프로젝트를 만든다.
+4.requirement.txt(서버에서 설치했던 패키지 리스트)를 이용해서 자신의 컴퓨터에 환경 설정을 한다.
+:pip install -r requirements.txt 
+
+
+*prj_skj1 
 admin username : admin
 admin password : password123
 
