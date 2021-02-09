@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Person
 
 # Create your views here.
 
@@ -7,6 +8,9 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from prj1_app.serializers import UserSerializer, GroupSerializer
+from .models import Person #khlee add 21/02/09
+from .serializers import PersonSerializer #khlee add 21/02/09
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -24,4 +28,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class PersonViewSet(viewsets.ModelViewSet):
+    queryset = Person.objects.all()
+    serializer_class = PersonSerializer
+
+
+
 #khlee add end
