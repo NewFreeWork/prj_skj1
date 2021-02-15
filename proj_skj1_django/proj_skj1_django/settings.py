@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', #khlee add 21/02/01
-    'prj1_app.apps.Prj1AppConfig', #khlee add 21/02/01
+    'prj1_app', #khlee add 21/02/09
 ]
 
 MIDDLEWARE = [
@@ -73,10 +73,12 @@ WSGI_APPLICATION = 'proj_skj1_django.wsgi.application'
 
 #khlee add 21/02/01
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    #khlee modify 21/02/09
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.IsAdminUser',
+    ],
     'PAGE_SIZE': 10
 }
-
 
 
 # Database
@@ -125,5 +127,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+import os
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') #khlee add 21/02/09
+
+#khlee add 21/02/09
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
