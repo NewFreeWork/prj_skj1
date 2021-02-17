@@ -4,3 +4,5 @@
 
 *ubuntu
 /opt폴더는 windows의 프로그램 폴더같은 이미지
+
+
