@@ -21,11 +21,21 @@ source activate
 종료
 deactivate
 
-*gunicorn 사용방법
-gunicorn prj_skj1_django.wsgi:application --bind 127.0.0.1:8000 --daemon --reload
+*gunicorn 사용방법(사용전 가상환경이 맞는지 먼저 확인)
+gunicorn proj_skj1_django.wsgi:application --bind 127.0.0.1:3030 --daemon --reload
 
 *nginx 사용방법
 service nginx start
+service nginx restart(재시작)
+
+cat /etc/nginx/sites-available/proj_skj1_nginx ->proj skj1 서버의 설정내용 확인
+cat /etc/nginx/sites-enable/proj_skj1_nginx ->proj skj1 서버의 설정의 적용내용 확인
+
+nginx/gunicorn사용시에 정적파일을 nginx에 매핑시켜야 이미지가 나온다. 
+location /static/ {
+ alias /home/ubuntu/name(projectname)/staticfile/;
+}
+
 
 
 *스마트 깃 백그라운드로 실행하는 방법
@@ -34,7 +44,7 @@ nohup smartgit &
 
 *ddns
 일단 아이피타임으로 사용
-host이름 : threeDevLab
+host이름 : threeDevLabd
 사용자id(이메일주소) : kihunopha@gmail.com
 사용자 암호 :20080136
 
