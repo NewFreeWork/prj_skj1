@@ -1,36 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Starter Template · Bootstrap v5.0</title>
-      
-      {% load static %}
-    
-      <link href="{%static 'prj1_app/css/bootstrap.css'%}" rel="stylesheet">      
-  </head>
-  <body>
-      
-        <style type="text/css">
-            @font-face{
-                font-family:"Ubuntu-L";
-                src:url("{%static 'prj1_app/fonts/Ubuntu-L.eot'%}") format('truetype'),
-                url("{%static 'prj1_app/fonts/Ubuntu-L.woff'%}") format('woff'),
-                url("{%static 'prj1_app/fonts/Ubuntu-L.woff2'%}") format('woff2'),
-                url("{%static 'prj1_app/fonts/Ubuntu-L.ttf'%}") format('truetype');
-            }  
+    <title>Fly...code Plane...</title>
 
-            @font-face{
-                font-family:"Binggrae";
-                src:url("{%static 'prj1_app/fonts/Binggrae.ttf'%}") format('truetype');
-            }
+    {% load static %}
 
-            body{
-                font-family : Ubuntu-L, Binggrae, Apple Gothic;
-            }
-        </style>
-      test html
-      빙그레체
-    
-      <script src="{%static 'prj1_app/js/bootstrap.js'%}"></script>
-  </body>
+    <link href="{%static 'prj1_app/css/bootstrap.css'%}" rel="stylesheet">    
+    <!-- Custom styles for this template -->
+    <link href="{%static 'prj1_app/css/offcanvas.css'%}" rel="stylesheet">    
+</head>
+<body>
+
+    <style type="text/css">
+        @font-face{
+            font-family:"Ubuntu-L";
+            src:url("{%static 'prj1_app/fonts/Ubuntu-L.eot'%}") format('truetype'),
+            url("{%static 'prj1_app/fonts/Ubuntu-L.woff'%}") format('woff'),
+            url("{%static 'prj1_app/fonts/Ubuntu-L.woff2'%}") format('woff2'),
+            url("{%static 'prj1_app/fonts/Ubuntu-L.ttf'%}") format('truetype');
+        } 
+        @font-face{
+            font-family:"Ubuntu-R";
+            src:url("{%static 'prj1_app/fonts/Ubuntu-R.eot'%}") format('truetype'),
+            url("{%static 'prj1_app/fonts/Ubuntu-R.woff'%}") format('woff'),
+            url("{%static 'prj1_app/fonts/Ubuntu-R.ttf'%}") format('truetype');
+        }  
+        @font-face{
+            font-family:"Binggrae";
+            src:url("{%static 'prj1_app/fonts/Binggrae.ttf'%}") format('truetype');
+        }
+        body{
+            font-family : Ubuntu-R, Ubuntu-L, Binggrae, Apple Gothic;
+        }
+    </style>
+
+    <body class="bg-white">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white" aria-label="Main navigation">
+            <div class="container-fluid">
+                <img class="me-3" src="{%static 'prj1_app/image/codeplaneJustPlane.jpg'%}" alt="" width="40" height="40"> 
+                <a class="navbar-brand text-dark" href="#">CodePlaneDev</a>
+                <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    
+                <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Download</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Forum</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">STAFF</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">부산남자 sb</a></li>
+                                <li><a class="dropdown-item" href="#">서울남자 kh</a></li>
+                                <li><a class="dropdown-item" href="#">인천남자 js</a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                    </ul>
+ 
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    <script src="{%static 'prj1_app/js/bootstrap.js'%}"></script>
+    <script src="{%static 'prj1_app/js/offcanvas.js'%}"></script>
+</body>
 </html>

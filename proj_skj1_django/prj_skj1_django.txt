@@ -39,4 +39,7 @@ host이름 : threeDevLab
 사용자 암호 :20080136
 
 
+*색상표시관련 참고사이트
+https://encycolorpedia.kr/343a40
+
 
