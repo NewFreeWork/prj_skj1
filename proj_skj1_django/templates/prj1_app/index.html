@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
     <title>Fly...code Plane...</title>
@@ -27,7 +27,8 @@
     
     
     <!-- Custom styles for this template -->
-    <link href="{%static 'prj1_app/css/offcanvas.css'%}" rel="stylesheet">    
+    <link href="{%static 'prj1_app/css/offcanvas.css'%}" rel="stylesheet">
+    <link href="{%static 'prj1_app/css/sticky-footer.css'%}" rel="stylesheet">
 </head>
 <body>
 
@@ -56,15 +57,23 @@
         }
     </style>
 
-    <body class="bg-white">
+    
+  
+    
+
+    <body class="d-flex flex-column h-100 bg-white">
+        
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white" aria-label="Main navigation">
             <div class="container-fluid">
-                <img class="me-3" src="{%static 'prj1_app/image/codeplaneJustPlane.jpg'%}" alt="" width="40" height="40"> 
-                <a class="navbar-brand text-dark" href="#">CodePlaneDev</a>
+
+                <a class="navbar-brand text-dark" href="#">
+                    <img class="me-3" src="{%static 'prj1_app/image/codeplaneJustPlane.jpg'%}" alt="" width="40" height="40"> 
+                    CodePlaneDev
+                </a>
                 <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                    
+
                 <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -76,7 +85,7 @@
                         <li class="nav-item">
                           <a class="nav-link" href="#">Forum</a>
                         </li>
-                        
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">STAFF</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown01">
@@ -85,10 +94,10 @@
                                 <li><a class="dropdown-item" href="#">인천남자 js</a></li>
                             </ul>
                         </li>
-                        
-                        
+
+
                     </ul>
- 
+
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit">Search</button>
@@ -96,10 +105,30 @@
                 </div>
             </div>
         </nav>
-        
-        
-        
+
+    
+        <main class="container">
+
+          <div class="starter-template text-center py-5 px-3">
+            <h3>
+                <img class="me-3" src="{%static 'prj1_app/image/codeplaneLogo.jpg'%}" alt="" width="120" height="120"> 
+            </h3>
+            <p class="lead">
+                Code Plane 공식 홈페이지 입니다. 
+            </p>
+          </div>
+
+        </main>  <!--   /.container -->
+
+        <footer class="footer mt-auto py-3 bg-light">
+          <div class="container">
+              <span class="text-muted"><small>Code Plane 관련 모든 정보는 'Code Plane'에서 hosting 하고 있습니다.</small></span>
+          </div>
+        </footer>     
+    </body>    
+
+           
     <script src="{%static 'prj1_app/js/bootstrap.js'%}"></script>
-    <script src="{%static 'prj1_app/js/offcanvas.js'%}"></script>
+    <script src="{%static 'prj1_app/js/offcanvas.js'%}"></script>    
 </body>
 </html>
