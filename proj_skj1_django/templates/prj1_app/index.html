@@ -6,7 +6,26 @@
 
     {% load static %}
 
-    <link href="{%static 'prj1_app/css/bootstrap.css'%}" rel="stylesheet">    
+    <link href="{%static 'prj1_app/css/bootstrap.css'%}" rel="stylesheet">
+    
+    <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+    </style>
+    
+    
+    
     <!-- Custom styles for this template -->
     <link href="{%static 'prj1_app/css/offcanvas.css'%}" rel="stylesheet">    
 </head>
@@ -28,7 +47,9 @@
         }  
         @font-face{
             font-family:"Binggrae";
-            src:url("{%static 'prj1_app/fonts/Binggrae.ttf'%}") format('truetype');
+            src:url("{%static 'prj1_app/fonts/Binggrae.eot'%}") format('truetype'),
+            url("{%static 'prj1_app/fonts/Binggrae.woff'%}") format('woff'),
+            url("{%static 'prj1_app/fonts/Binggrae.ttf'%}") format('truetype');
         }
         body{
             font-family : Ubuntu-R, Ubuntu-L, Binggrae, Apple Gothic;
@@ -75,6 +96,9 @@
                 </div>
             </div>
         </nav>
+        
+        
+        
     <script src="{%static 'prj1_app/js/bootstrap.js'%}"></script>
     <script src="{%static 'prj1_app/js/offcanvas.js'%}"></script>
 </body>
