@@ -87,8 +87,14 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql', #khlee add 21/02/28
+        'NAME': 'proj_skj1_django',
+        'USER': 'skj1',
+        'PASSWORD': 'skj1database',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

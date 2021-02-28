@@ -7,12 +7,16 @@
 
 
 *prj_skj1 
+django 슈퍼유저 설정
+python mange.py createsuperuser 
+
 admin username : admin
 admin password : password123
 
 
 *django rest framework 작업
 https://www.django-rest-framework.org/tutorial/quickstart/
+
 
 
 *가상환경(virtualenv) 사용방법
@@ -47,6 +51,13 @@ nohup smartgit &
 host이름 : codeplane
 
 
+*가상환경에서 설치된 패키지 확인 및 requirement.txt 파일로 저장하는 법
+pip list (설치된 패키지 확인)
+pip freeze > requirements.txt (설치된 패키지 리스트로 저장)
+
+
+
+
 *색상표시관련 참고사이트
 https://encycolorpedia.kr/343a40
 
@@ -58,4 +69,9 @@ https://convertico.com
 
 *색상조합 사이트
 https://www.paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF
+
+*postgresql proj_skj1_django 데이터베이스 생성
+user:skj1
+password:skj1database
+
 
