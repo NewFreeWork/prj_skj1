@@ -38,6 +38,10 @@ router.register(r'person', views.PersonViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(urls_prj1App)), #khlee add 21/02/17
+    path('prj1App_category1/', include(urls_prj1App)), #khlee add 21/02/26
+    path('prj1App_category2/', include(urls_prj1App)), #khlee add 21/02/26
+    path('prj1App_testLink1/', include(urls_prj1App)), #khlee add 21/02/26
+    path('prj1App_testLink2/', include(urls_prj1App)), #khlee add 21/02/26
 #    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),

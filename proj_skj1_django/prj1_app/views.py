@@ -37,5 +37,22 @@ class PersonViewSet(viewsets.ModelViewSet):
 
     
 #khlee add 21/02/17
-def index(request):
-    return render(request, "prj1_app/index.html")
+def prj1App_index(request):
+    return render(request, "prj1_app/prj1App_index.html")
+
+
+#khlee add 21/02/26
+def prj1App_category1(request):
+    return render(request, "prj1_app/prj1App_category1.html")
+
+def prj1App_category2(request):
+    return render(request, "prj1_app/prj1App_category2.html")
+
+def prj1App_testLink1(request):
+    return render(request, "prj1_app/prj1App_testLink1.html")
+
+def prj1App_testLink2(request):
+    return render(request, "prj1_app/prj1App_testLink2.html")
+
+def prj1App_about(request):
+    return render(request, "prj1_app/prj1App_about.html")

@@ -1,0 +1,28 @@
+{% extends "prj1_base_generic.html" %}       
+{%block content%}
+      
+{% load static %}
+
+<div class="small-wrapper">
+    <div class="about-container">
+        <section class="about-header">
+            <div class="author-image-container">
+                <img src="{%static 'prj1_app/image/codeplaneLogo.jpg'%}">
+            </div>
+            <p class="subtitle">STAFF<br> 부산sb 서울kh 인천js</p>
+        </section>
+        <section class="about-body">
+            <ul class="contact-list">
+
+                <li class="email"><a href="mailto:kihunopha@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                <li class="phone"><a href="tel:01095090171"><i class="fa fa-phone"></i></a></li>
+
+            </ul>
+        </section> <!-- End About Body-->
+    </div> <!-- End About Container -->
+</div> <!-- End Small Wrapper -->
+
+      
+{%endblock%}
+{%block pagination%}
+{%endblock%}

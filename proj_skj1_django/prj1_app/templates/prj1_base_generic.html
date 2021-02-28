@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+	<meta charset="utf-8">
+	{% block title %}<title>Fly...code Plane...</title>{% endblock %}
+    
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{%static 'prj1_app/image/codeplaneJustPlaneBOLD.ico'%}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{%static 'prj1_app/image/codeplaneJustPlane.ico'%}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{%static 'prj1_app/image/codeplaneJustPlane.ico'%}">
+    
+    <link rel="apple-touch-icon" sizes="114x114" href="">
+    
+    <!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+    
+
+    <!-- Font Awesome -->
+	<link rel="stylesheet" href="{%static 'prj1_app/css/all.css'%}">
+	<!-- Styles -->
+	<link rel="stylesheet" href="{%static 'prj1_app/css/main.css'%}">    
+
+    <link href="{%static 'prj1_app/css/sticky-footer.css'%}" rel="stylesheet">
+
+</head>
+<body>
+       
+        <div class="flex-container">
+            
+            <header class="main-header">
+                <div class="wrapper">
+                    <div class="header-flex">
+                        <div class="menu-icon-container">
+                            <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        </div>
+
+                        <nav class="main-nav">
+                            <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                            <ul>
+                                <li><a href=""><b>All</b></a></li>
+                                <li><a href="/prj1App_category1">category 1</a></li>
+                                <li><a href="/prj1App_category2">category 2</a></li>
+                                <li><a href="/prj1App_testLink1">testLink 1</a></li>
+                                <li><a href="/prj1App_testLink2">testLink 2</a></li>
+                                <li><a href="">Tags</a></li>
+                                <li><a href="/prj1App_about">About</a></li>
+                            </ul>
+                        </nav>
+
+                            
+                        
+                        <p class="logo"><a href="/"><img src="{%static 'prj1_app/image/codeplaneJustPlaneBOLD2.png'%}" width="40" height="40"> Code Plane Lap.</a></p>
+
+                        <div class="search-icon-container">
+                            <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </header> <!-- End Header -->
+            
+            <div class="content wrapper">
+
+                
+                {%block content%}{%endblock%}
+                
+
+                <div class="search-box">
+                    <div class="wrapper">
+                        <div class="search-grid">
+
+                            <form class="search-form">
+                                <div id="search-container">
+                                    <input type="text" id="search-input" class="search" placeholder="Search">
+                                </div>
+                            </form>
+                            <ul id="results-container" class="results-search"></ul>
+                            <div class="icon-close-container">
+                            <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                {%block pagination%}
+                <div class="pagination clearfix">
+                    <a href="/page2/" class="next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+                {%endblock%}
+                
+            </div> <!-- End Wrapper -->
+            
+
+          
+            <footer class="main-footer">
+                <div class="copyright">
+                <small>Code Plane 관련 모든 정보는 'Code Plane'에서 hosting 하고 있습니다.</small>
+                </div>
+            </footer>   
+       <!--  End Footer -->
+        </div>
+
+    <!-- JS -->
+    <script src="{%static 'prj1_app/js/jquery-3.2.1.min.js'%}"></script>
+    <script src="{%static 'prj1_app/js/main.js'%}"></script>
+    
+</body>
+    
+</html>
