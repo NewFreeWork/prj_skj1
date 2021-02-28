@@ -73,5 +73,14 @@ https://www.paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF
 *postgresql proj_skj1_django 데이터베이스 생성
 user:skj1
 password:skj1database
+postgres user로 접근
+sudo -i -u postgres
+postgre sql진입
+psql 
+create database proj_skj1_django;
+create user skj1 with password 'skj1database';
+alter role skj1 set client_encoding to 'utf-8';
+alter role skj1 set timezone to 'asia/seoul';
+
 
 
