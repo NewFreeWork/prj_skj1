@@ -56,3 +56,8 @@ def prj1App_testLink2(request):
 
 def prj1App_about(request):
     return render(request, "prj1_app/prj1App_about.html")
+
+def prj1App_userBlogNew(request):
+    return render(request, "prj1_app/prj1App_userBlogNew.html")
+
+

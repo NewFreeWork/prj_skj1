@@ -26,6 +26,8 @@ from rest_framework import routers
 from prj1_app import views, urls_prj1App
 from django.conf import settings #khlee add 21/02/09
 from django.conf.urls.static import static #khlee add 21/02/09
+from django.contrib.auth import views as auth_views #khlee add 21/03/01
+from django.conf.urls import url #khlee add 21/03/01
 
 
 router = routers.DefaultRouter()
@@ -43,6 +45,10 @@ urlpatterns = [
     path('prj1App_testLink1/', include(urls_prj1App)), #khlee add 21/02/26
     path('prj1App_testLink2/', include(urls_prj1App)), #khlee add 21/02/26
     path('prj1App_about/', include(urls_prj1App)), #khlee add 21/02/26
+    path('prj1App_userBlogNew/', include(urls_prj1App)), #khlee add 21/02/26
+
+    #khlee add 21/03/01
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     
 #    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),

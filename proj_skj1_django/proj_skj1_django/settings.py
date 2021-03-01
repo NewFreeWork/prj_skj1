@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'prj1_app', #khlee add 21/02/09
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', #khlee add 21/02/01
-    'prj1_app', #khlee add 21/02/09
+    
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') #khlee add 21/02/09
 #khlee add 21/02/09
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#khlee add 21/03/01
+LOGIN_REDIRECT_URL = '/' # 로그인에 성공했을 때 리다이렉트로 연결되는 URL 지정.
