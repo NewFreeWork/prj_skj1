@@ -14,6 +14,11 @@ admin username : admin
 admin password : password123
 
 
+*pip 관련
+설치된거 삭제 명령
+pip uninstall [option] package
+
+
 *django rest framework 작업
 https://www.django-rest-framework.org/tutorial/quickstart/
 
@@ -63,6 +68,15 @@ https://encycolorpedia.kr/343a40
 
 *서버 ssh 접속방법
 ssh khlee@codeplane.iptime.org
+
+*git command
+git status 현재 깃 상태 확인
+git remote -v 로컬 repository와 원격 repository연동 현황을 조회
+git fetch
+git pull origin
+git push –u origin master
+
+
 
 *아이콘 변환 사이트
 https://convertico.com
