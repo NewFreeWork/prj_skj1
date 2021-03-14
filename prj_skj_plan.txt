@@ -50,20 +50,11 @@
 
 -더하기 프로그램 진행중(jscho)
 
--노트북으로 서버만들기(khlee)
-21/01/29
-간단한 확인은 윈도우의 wsl2로 확인 ->ok
-ddns(DuckDns) -> 임시로 iptime으로 서버제작
-+ ubuntu ->ok
-+ docker(docker compose) ->ok
-+ ngnix ->ok
-+ django(python+virtuslenv+mariaDB)  -> 마리아db는 설치필요
-+ gunicorn ->ok
-+ rest api(django-rest-framework) ->ok
+-사이트 제작중(khlee)
+
 
 -안드로이드 + restapi + server 조합으로 파일 입출력 및 기본 기능 확인(khlee)
 -집에서 개발환경 구축(khlee, sblee, jscho)
-
 
 -소규모파일관리프로그램(sblee)
 
@@ -72,6 +63,18 @@ ddns(DuckDns) -> 임시로 iptime으로 서버제작
 소개 홈페이지만 + 앱 + 앱 커뮤니티
 
 *진행완료
+
+-노트북으로 서버만들기(khlee) ->ok
+21/01/29
+간단한 확인은 윈도우의 wsl2로 확인 ->ok
+ddns(DuckDns) -> 임시로 iptime으로 서버제작
++ ubuntu ->ok
++ docker(docker compose) ->ok
++ ngnix ->ok
++ django(python+virtuslenv+mariaDB)  -> postgre로 대체
++ gunicorn ->ok
++ rest api(django-rest-framework) ->ok
+
 
 
 -사명 및 엠블럼 제작

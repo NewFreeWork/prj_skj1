@@ -30,28 +30,73 @@ from django.contrib.auth import views as auth_views #khlee add 21/03/01
 from django.conf.urls import url #khlee add 21/03/01
 
 
+admin.site.site_header = 'Code Plane Admin' #khlee add 21/03/11
+
+
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'person', views.PersonViewSet)
 
 
+
+#khlee add 21/03/06
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+
+
+
+# Use include() to add URLS from the blog application 
+from django.urls import include
+
+urlpatterns += [
+#    path('blog/', include('blog.urls')),
+]
+
+
+#Add URL maps to redirect the base URL to our application
+from django.views.generic import RedirectView
+urlpatterns += [
+#    path('', RedirectView.as_view(url='/blog/', permanent=True)),
+]
+
+
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
-urlpatterns = [
-    path('', include(urls_prj1App)), #khlee add 21/02/17
-    path('prj1App_category1/', include(urls_prj1App)), #khlee add 21/02/26
-    path('prj1App_category2/', include(urls_prj1App)), #khlee add 21/02/26
-    path('prj1App_testLink1/', include(urls_prj1App)), #khlee add 21/02/26
-    path('prj1App_testLink2/', include(urls_prj1App)), #khlee add 21/02/26
-    path('prj1App_about/', include(urls_prj1App)), #khlee add 21/02/26
-    path('prj1App_userBlogNew/', include(urls_prj1App)), #khlee add 21/02/26
 
+from django.views.generic import RedirectView
+
+urlpatterns += [
+    
+#    path('', include(urls_prj1App)), #khlee add 21/02/17
+    
+#    path('prj1App_category1/', include(urls_prj1App)), #khlee add 21/02/26
+#    path('prj1App_category2/', include(urls_prj1App)), #khlee add 21/02/26
+#    path('prj1App_testLink1/', include(urls_prj1App)), #khlee add 21/02/26
+#    path('prj1App_testLink2/', include(urls_prj1App)), #khlee add 21/02/26
+#    path('prj1App_about/', include(urls_prj1App)), #khlee add 21/02/26
+#    path('prj1App_userBlogNew/', include(urls_prj1App)), #khlee add 21/02/26
+
+    
+    
+    
     #khlee add 21/03/01
     url(r'^accounts/', include('django.contrib.auth.urls')),
     
 #    path('', include(router.urls)),
+#    path('admin/', admin.site.urls),
+    
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('admin/', admin.site.urls),
+
+
+    
+    path('prj1App/', include(urls_prj1App)), #khlee add 21/03/09
+    path('', RedirectView.as_view(url='/prj1App/', permanent=False)), #khlee add 21/03/09
+#    path('', include(urls_prj1App)), #khlee add 21/03/11
+    
+    
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

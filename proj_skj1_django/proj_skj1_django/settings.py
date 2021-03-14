@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', #khlee add 21/02/01
     
+    #Add config for Blog application
+    #'blog.apps.BlogConfig', 
+    
 ]
 
 MIDDLEWARE = [
@@ -75,11 +78,12 @@ WSGI_APPLICATION = 'proj_skj1_django.wsgi.application'
 
 #khlee add 21/02/01
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination', #khlee add 21/03/06ß
     #khlee modify 21/02/09
     'DEFAULT_PERMISSION_CLASSES': [
         # 'rest_framework.permissions.IsAdminUser',
     ],
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 100 #khlee modify 21/03/06
 }
 
 
@@ -124,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 

@@ -588,7 +588,9 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
+/*  font-family: sans-serif; */
+  font-family: 'BMJUA_ttf', sans-serif; 
+    
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -597,6 +599,26 @@ textarea {
   margin: 0;
   /* 2 */
 }
+
+
+
+
+
+
+
+
+input.password {
+    font-family: 'ubuntu-r', sans-serif; 
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
 
 /**
  * Show the overflow in IE.
@@ -996,7 +1018,9 @@ pre code {
   display: block;
   padding: 15px 0;
   text-decoration: none;
-  text-transform: uppercase; 
+    
+/*  text-transform: uppercase; */
+    
   font-weight: 400;
   font-size: 18px;
   color: #311e3e;

@@ -1,0 +1,15 @@
+{% extends "prj1_base_generic.html" %}   
+{%block content%}
+
+<p>Post your comment for: <a href="{% url 'prj1App_blog-detail' prj1_blog.pk %}">{{prj1_blog.title}}</a></p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+    
+</form>
+
+{%endblock%}

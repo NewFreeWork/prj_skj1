@@ -34,8 +34,50 @@
 
 {%block content%}
 
+<!--   
+<div class="post-card-box">
+
+    
+ 
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    <br><br>
+    
+    {{ form.password.label_tag }}
+    {{ form.password }}
+    <br><br>
 
 
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+</div>
+-->
+
+
+
+<!--
+-->
 <div class="post-card-box">
 
     
@@ -47,15 +89,21 @@
     {% if form.errors %}
     <p>ID나 비밀번호가 일치하지 않습니다.</p>
     {% endif %}
-
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        
         <input type="hidden" name="next" value="" />
         {{ form.as_p }}
         <button type="submit">로그인</button>
+        
+    <!-- 
+    -->
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    
     </form>    
     {% endif %}    
+
+
 
 
 <!--    

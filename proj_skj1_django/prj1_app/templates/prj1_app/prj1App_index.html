@@ -3,10 +3,12 @@
        
 {%block content%}
             
+<!--
+-->
 
+{%comment%}  
 
 <div class="post-card-box">
-
     <h2><a href="/log/end/" class="link-post_list">home index test</a></h2>
 
     <p class="post-meta">Jun 12, 2019</p>
@@ -18,6 +20,9 @@
     <div class="page-tag">
         <a href="/tags#log" class="tag" style="color: #faa;">#log</a>
     </div>
+
+
+    
 </div>
 
 <div class="post-card-box">
@@ -48,6 +53,38 @@
         <a href="/tags#nodejs" class="tag" style="color: #faa;">#nodejs</a>
     </div>
 </div>
+{%endcomment%}
 
-            
+
+
+
+<div class="post-card-box">
+    <h1>Post list...</h1>
+</div>
+        
+{% if prj1_blog_list %}
+    {% for prj1_blog in prj1_blog_list %}
+    
+        <div class="post-card-box">
+                {%comment%}                
+                <a href="{{ prj1_blog.get_absolute_url }}">{{ prj1_blog.title }}</a> ({{prj1_blog.post_date}}) — <a href="{% url 'blogs-by-authorblogs-by-author' blog.author.pk %}">{{ prj1_blog.author }}</a>
+                {%endcomment%}
+                
+                <h2><a href="{{ prj1_blog.get_absolute_url }}" class="link-post_list">{{ prj1_blog.title }}</a></h2>
+                <p class="post-meta">({{prj1_blog.post_date}})-{{ prj1_blog.author }}</p>
+                <div class="post-list-content">내용 공사중...</div>
+                <div class="page-tag">
+                    <a href="" class="tag" style="color: #faa;">#태그 공사중...</a>
+                </div>
+
+                {%comment%}    
+                <a href="{{ prj1_blog.get_absolute_url }}">{{ prj1_blog.title }}</a> ({{prj1_blog.post_date}})-{{ prj1_blog.author }}
+                {%endcomment%}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>There are no blogs.</p>
+{% endif %}       
+
+
 {%endblock%}

@@ -1,0 +1,23 @@
+{% extends "prj1_base_generic.html" %}
+{%block content%}
+
+    <h1>All blogs</h1>
+
+    {% if prj1_blog_list %}
+    <ul>
+        
+        
+      {% for prj1_blog in prj1_blog_list %}
+      <li>
+        <a href="{{ prj1_blog.get_absolute_url }}">{{ prj1_blog.title }}</a> ({{prj1_blog.post_date}}) — <a href="{% url 'blogs-by-authorblogs-by-author' blog.author.pk %}">{{ prj1_blog.author }}</a>
+      </li>
+      {% endfor %}
+
+        
+    </ul>
+
+    {% else %}
+      <p>There are no blogs.</p>
+    {% endif %}       
+{% endblock %}
+

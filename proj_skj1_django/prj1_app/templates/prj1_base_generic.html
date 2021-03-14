@@ -13,9 +13,9 @@
 
     {% load static %}
 
-    <link rel="shortcut icon" href="{%static 'prj1_app/image/codeplaneJustPlaneBOLD.ico'%}" type="image/x-icon">
-	<link rel="apple-touch-icon" href="{%static 'prj1_app/image/codeplaneJustPlane.ico'%}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{%static 'prj1_app/image/codeplaneJustPlane.ico'%}">
+    <link rel="shortcut icon" href="{%static 'prj1_app/images/codeplaneJustPlaneBOLD.ico'%}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{%static 'prj1_app/images/codeplaneJustPlane.ico'%}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{%static 'prj1_app/images/codeplaneJustPlane.ico'%}">
     
     <link rel="apple-touch-icon" sizes="114x114" href="">
     
@@ -25,6 +25,9 @@
 	<meta name="msapplication-navbutton-color" content="#311e3e">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+
+    {% block addheader %}
+    {% endblock %}
     
 
     <!-- Font Awesome -->
@@ -35,6 +38,7 @@
 <!--    <link href="{%static 'prj1_app/css/sticky-footer.css'%}" rel="stylesheet"> -->
 
     {% endblock %}
+
     
 </head>
 <body>
@@ -59,7 +63,7 @@
                                 {% if user.is_active %}
                                 <li><a href="{%url 'login' %}"> <span class="glyphicon glyphicon-heart"></span><i class="fa fa-lock-open"></i> {{user.username}}</a></li>
                                 <!-- <li><a href="{% url 'logout' %}">Logout</a></li> -->
-                                <li><a href="/prj1App_userBlogNew"><i class="fa fa-file-alt"></i> blog post</a></li>
+                                <li><a href="{% url 'prj1App_blog_create' %}"><i class="fa fa-file-alt"></i> blog post</a></li>
                                 
                                 
                                 {% else %}
@@ -68,19 +72,27 @@
                                 {% endif %}
                                 
                                                             
-                                <li><a href=""><b>All</b></a></li>
+                                <li><a href="{% url 'prj1App_index' %}"><b>All post</b></a></li>
+                                <!--
                                 <li><a href="/prj1App_category1">category 1</a></li>
                                 <li><a href="/prj1App_category2">category 2</a></li>
                                 <li><a href="/prj1App_testLink1">testLink 1</a></li>
                                 <li><a href="/prj1App_testLink2">testLink 2</a></li>
                                 <li><a href="">Tags</a></li>
                                 <li><a href="/prj1App_about">About</a></li>
+                                -->
+                                <li><a href="{% url 'prj1App_category1' %}">category 1</a></li>
+                                <li><a href="{% url 'prj1App_category2' %}">category 2</a></li>
+                                <li><a href="{% url 'prj1App_testLink1' %}">testLink 1</a></li>
+                                <li><a href="{% url 'prj1App_testLink2' %}">testLink 2</a></li>
+                                <li><a href="">Tags</a></li>
+                                <li><a href="{% url 'prj1App_about' %}">About</a></li>
                             </ul>
                         </nav>
 
                             
                         
-                        <p class="logo"><a href="/"><img src="{%static 'prj1_app/image/codeplaneJustPlaneBOLD2.png'%}" width="40" height="40"> Code Plane Lap.</a></p>
+                        <p class="logo"><a href="/"><img src="{%static 'prj1_app/images/codeplaneJustPlaneBOLD2.png'%}" width="40" height="40"> Code Plane Lap.</a></p>
 
                         <div class="search-icon-container">
                             <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
@@ -121,13 +133,16 @@
                 
             </div> <!-- End Wrapper -->
             
-
-          
-            <footer class="main-footer">
+            {%block tag%}
+            {%endblock%}
+            
+            
+            <footer class="main-footer">   
                 <div class="copyright">
                 <small>Code Plane 관련 모든 정보는 'Code Plane'에서 hosting 하고 있습니다.</small>
                 </div>
-            </footer>   
+            </footer>
+            
        <!--  End Footer -->
         </div>
 

@@ -19,6 +19,17 @@ admin password : password123
 pip uninstall [option] package
 
 
+*장고 프로젝트 생성
+django-admin startproject mysite(생성할 사이트 이름)
+
+
+*장고 앱 생성
+python manage.py startapp polls(생성할 앱이름)
+
+*장고 개발 관련
+내재된 form을 사용할때 form template 이름 : model에서 생성한 함수명_form.html로 생성해서 자동으로 읽어가는 듯함..
+역시 내재된 view를 사용할때도 그와 관련된 view template이름 : model에서 생성한 함수명_list.html or model에서 생성한 함수명_detail.html로 생성해야 자동으로 읽어가는 듯함...
+
 *django rest framework 작업
 https://www.django-rest-framework.org/tutorial/quickstart/
 
