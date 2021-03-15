@@ -71,6 +71,7 @@ def prj1App_about(request):
 
 
 
+
 #khlee add 21/03/11
 class prj1App_BlogDetailView(generic.DetailView):
     """
@@ -125,7 +126,19 @@ class prj1App_BlogCommentCreate(LoginRequiredMixin, CreateView):
 
 from django.views.generic.edit import CreateView    
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django_summernote.widgets import SummernoteWidget #khlee add 21/03/14
+from .forms import CreateBlogForm #khlee add 21/03/14
 
-class prj1App_BlogCreate(CreateView):
-    model = prj1_Blog
-    fields = ['title', 'author', 'description']
+
+def prj1App_BlogCreate(request):
+    form = CreateBlogForm()
+    return render(request, "prj1_app/prj1_blog_form.html", {'form': form})
+
+
+    #model = prj1_Blog
+    #fields = ['title', 'author', 'description']
+    
+    #widgets = {
+        #'description': SummernoteWidget(),
+    #}
+    

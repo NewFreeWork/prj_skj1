@@ -15,32 +15,48 @@
 
 
 
-
-
-<div class="post-card-box">
-
  
     <form action="" method="post">
         {% csrf_token %}
-        <table>
-        {{ form.as_table }}
-        </table>
         
-        <h2>글쓰기</h2>
-        <textarea name="content" id="summernote">
-    {%comment%}
-        {{ form.content.value|default_if_none:'' }}
-    {%endcomment%}    
-        {{ form.description|default_if_none:'' }}
-        </textarea>
+        <div class="fieldWrapper">
+            {{ form.title.errors }}
+            <label for="{{ form.title.id_for_label }}">title:</label>
+            {{ form.title }}
+        </div>
 
-        <script>
-            $('#summernote').summernote({
-            placeholder: '여기에 내용 입력하세요~',
-            tabsize: 2,
-            height: 100
-            });
-        </script>
+        <div class="fieldWrapper">
+            {{ form.author.errors }}
+            <label for="{{ form.author.id_for_label }}">author:</label>
+            {{ form.author }}
+        </div>
+        
+
+        
+        <div class="fieldWrapper">
+        
+            {{ form.description.errors }}
+            <label for="{{ form.description.id_for_label }}">description:</label>
+ {%comment%}             
+            {{ form.description}}
+ {%endcomment%}       
+            
+           
+            <h2>글쓰기</h2>
+            <textarea name="description" id="summernote">
+                {{ form.description.value|default_if_none:'' }}
+            </textarea>
+
+            <script>
+                $('#summernote').summernote({
+                    placeholder: '여기에 내용 입력하세요~',
+                    tabsize: 2,
+                    height: 100
+                });
+            </script>
+  
+        </div>
+        
         <input type="submit" value="쓴거저장">        
     {%comment%}        
         <input type="submit" value="Submit" />
@@ -64,13 +80,6 @@
     </script>
     <input type="submit" value="쓴거저장">
 {%endcomment%}       
-    
-</div>
-
-
-
-
-
 
 
 {%endblock%}

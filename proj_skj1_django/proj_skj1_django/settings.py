@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     
     #Add config for Blog application
     #'blog.apps.BlogConfig', 
-    
+    'django_summernote', #khlee add 21/03/14
 ]
 
 MIDDLEWARE = [
@@ -149,3 +149,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #khlee add 21/03/01
 LOGIN_REDIRECT_URL = '/' # 로그인에 성공했을 때 리다이렉트로 연결되는 URL 지정.
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
