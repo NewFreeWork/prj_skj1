@@ -37,11 +37,11 @@
         
             {{ form.description.errors }}
             <label for="{{ form.description.id_for_label }}">description:</label>
- {%comment%}             
+              
             {{ form.description}}
- {%endcomment%}       
+      
             
-           
+ {%comment%}          
             <h2>글쓰기</h2>
             <textarea name="description" id="summernote">
                 {{ form.description.value|default_if_none:'' }}
@@ -54,7 +54,8 @@
                     height: 100
                 });
             </script>
-  
+{%endcomment%}  
+            
         </div>
         
         <input type="submit" value="쓴거저장">        

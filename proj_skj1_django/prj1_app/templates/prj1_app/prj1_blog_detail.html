@@ -1,6 +1,51 @@
 {% extends "prj1_base_generic.html" %}   
-{%block content%}
 {% load static %}
+{% block addheader %}
+
+<script type="text/javascript" src="{%static 'prj1_app/js/shCore.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shAutoloader.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushAppleScript.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushAS3.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushBash.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushColdFusion.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushCpp.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushCSharp.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushCss.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushDelphi.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushDiff.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushErlang.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushGroovy.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushJava.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushJavaFX.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushJScript.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushPerl.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushPhp.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushPlain.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushPowerShell.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushPython.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushRuby.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushSass.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushScala.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushSql.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushVb.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shBrushXml.js'%}"></script>
+<script type="text/javascript" src="{%static 'prj1_app/js/shLegacy.js'%}"></script>
+
+<link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shCore.css'%}">
+<link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shThemeDefault.css'%}">
+
+<script type="text/javascript"> 
+    SyntaxHighlighter.defaults['tooblar']=false;
+    SyntaxHighlighter.all(); 
+</script>
+
+{% endblock %}
+{%block content%}
+
+{% block bodysetting %}
+<body Onload="dp.SyntaxHighlighter.HighligthAll('code');">
+{% endblock %}
+
 
 <article class="article-page">
     <div class="page-image">
@@ -12,39 +57,7 @@
             <div class="header-page">
                 <h1 class="page-title">{{ prj1_blog.title }}</h1>
                 <div class="page-date">{{ prj1_blog.post_date }}</div>
-                
-                
-                
-                    <p>장고는 인빌트(inbuilt) 단위 테스트 기능을 제공한다.</p>
-
-                    <h1 id="단위-테스트">단위 테스트</h1>
-                    <p>응용 프로그램의 개별 단위가 자신이 원하는 대로 수행되는지 테스트하는 소프트웨어 테스트 프로세스이다.</p>
-                    <p>올바른 값을 반환하는지 여부와 무효한 데이터를 처리하는 방법 등을 테스트 할 수 있다.</p>
-                    <p>단위 테스트는 4 가지 기본 개념이 있다.</p>
-                
-                
-                    <ul>
-                      <li>테스트 픽스처(test fixture): 테스트를 수행하는 데 필요한 설정. 데이터베이스, 샘플 데이터 세트 및 서버 설정이 포함될 수 있다.</li>
-                      <li>테스트 케이스(test case): 테스트의 기본단위</li>
-                      <li>테스트 수트(test suite): 그룹으로 실행되는 테스트 케이스, 또는 다른 테스트 수트의 수</li>
-                      <li>테스트 러너(test runner): 테스트 실행을 제어하고 테스트 결과를 사용자에게 다시 제공하는 프로그램.</li>
-                    </ul>
-                
-                
-                    <h1 id="자동-테스트">자동 테스트</h1>
-
-                    <p>테스트는 응용 프로그램 개발의 일반적인 부분이지만, 자동화된 테스트에서는 테스트 작업이 시스템에서 수행된다는 점이다르다. 한 번 테스트 세트 작성후, 앱을 변경하면서 시간이 오래 걸리는 수동 테스트를 수행하지 않아도 원래 의도대로 코드가 작동하는지 확인할 수 있다.</p>
-
-                    <h2 id="왜-테스트해야-하는가">왜 테스트해야 하는가?</h2>
-                
-                
-                
-                
                     {{ prj1_blog.description|safe }}
-                
-                
-                
-                
             </div>
             
             

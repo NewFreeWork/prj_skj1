@@ -25,8 +25,7 @@ urlpatterns = [
     path('testLink2/', views.prj1App_testLink2, name='prj1App_testLink2'),
     path('about/', views.prj1App_about, name='prj1App_about'),
 #    path('userBlogNew/', views.prj1App_userBlogNew, name='prj1App_userBlogNew'),
-#    path('BlogCreate/', views.prj1App_BlogCreate.as_view(), name='prj1App_blog_create'),
-    path('BlogCreate/', views.prj1App_BlogCreate, name='prj1App_blog_create'),
+    path('BlogCreate/', views.prj1App_BlogCreate.as_view(), name='prj1App_blog_create'),
     
     path('BlogDetail/<int:pk>', views.prj1App_BlogDetailView.as_view(), name='prj1App_blog-detail'), #khlee add 21/03/11
     path('BlogDetail/<int:pk>/comment/', views.prj1App_BlogCommentCreate.as_view(), name='prj1App_blog_comment'), #khlee add 21/03/11

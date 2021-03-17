@@ -109,3 +109,15 @@ alter role skj1 set timezone to 'asia/seoul';
 
 
 
+*블로그 쓸때 소스코드 작성법
+썸머노트에 글쓰다가
+코드보기 누르고
+그 상태의 html에 
+<pre class="brush:cpp;">
+표현코드
+</pre>
+기타 옵션들이 있으니 확인후 사용할수 있음
+
+
+
+

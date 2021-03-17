@@ -130,9 +130,12 @@ from django_summernote.widgets import SummernoteWidget #khlee add 21/03/14
 from .forms import CreateBlogForm #khlee add 21/03/14
 
 
-def prj1App_BlogCreate(request):
-    form = CreateBlogForm()
-    return render(request, "prj1_app/prj1_blog_form.html", {'form': form})
+class prj1App_BlogCreate(CreateView): #khlee mod 21/03/17
+    template_name = 'prj1_app/prj1_blog_form.html'
+    success_url = '/'
+    form_class = CreateBlogForm   
+#    form = CreateBlogForm()
+#    return render(request, "prj1_app/prj1_blog_form.html", {'form': form})
 
 
     #model = prj1_Blog
