@@ -106,4 +106,59 @@ class prj1_BlogComment(models.Model):
         else:
             titlestring=self.description
         return titlestring    
+
+    
+#khlee add 21/03/17    
+    
+class File(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    upload_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    # file will be saved to MEDIA_ROOT/uploads/2015/01/30
+    file = models.FileField(upload_to='uploads/%Y/%m/%d/')
+    owner = models.ForeignKey(
+        User,
+        related_name='owner_files',
+        on_delete=models.CASCADE,
+    )
+    def __str__(self):
+        return self.title or self.description or self.file.url
+    def get_absolute_url(self):
+        #Returns the url to access a particular blog-author instance.
+        return reverse('download', args=[str(self.id)])
+    
+    
+    
+    
+class Message(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    message = models.TextField(blank=True, null=True)
+    files = models.ManyToManyField(
+        File,
+        blank=True,
+        null=True,
+        related_name='messages')
+    is_read = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=False)
+    created_date = models.DateTimeField(auto_now_add=True)
+    read_date = models.DateTimeField(blank=True, null=True)
+    to_users = models.ManyToManyField(User, 'inbox')
+    created_by = models.ForeignKey(
+        User,
+        related_name='sent_inbox_messages',
+        on_delete=models.CASCADE,
+    )
+    parent = models.ForeignKey(
+        'self',
+        null=True,
+        blank=True,
+        related_name='replies',
+        on_delete=models.CASCADE
+    )
+    def __str__(self):
+        return self.title or self.message
+    
+
+    
     

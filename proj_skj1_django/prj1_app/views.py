@@ -145,3 +145,44 @@ class prj1App_BlogCreate(CreateView): #khlee mod 21/03/17
         #'description': SummernoteWidget(),
     #}
     
+    
+
+#khlee add 21/03/17
+from .models import File
+from django.http import HttpResponse
+
+
+class prj1App_downloadList(generic.ListView):
+    model = File
+    paginate_by = 5
+
+
+
+def download(request, id):
+    file = get_object_or_404(File, id=id)
+    messages = file.messages.all()
+    is_allowed = True if len(list(filter(
+        lambda message: (
+            request.user in message.to_users.all()
+            or
+            request.user.username == message.created_by.username
+        ),
+        messages
+    ))) else False
+    response = HttpResponse(status=200) #khlee mod 21/03/18
+    if not request.headers.get('X-Real-Ip'):
+        response.status_code = 404
+        response.content = 'The request should be come from Nginx server.'
+        return response
+    if not is_allowed:
+        response.status_code = 403
+        response.content = 'You are not allowed to access this file.'
+        return response
+    file_name = file.file.name
+    # Let NGINX handle it
+    response['Content-Type'] = ''
+    response['X-Accel-Redirect'] = f'/{file.file.url}'
+#    response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
+    return response
+
+

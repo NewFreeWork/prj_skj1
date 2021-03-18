@@ -30,4 +30,8 @@ urlpatterns = [
     path('BlogDetail/<int:pk>', views.prj1App_BlogDetailView.as_view(), name='prj1App_blog-detail'), #khlee add 21/03/11
     path('BlogDetail/<int:pk>/comment/', views.prj1App_BlogCommentCreate.as_view(), name='prj1App_blog_comment'), #khlee add 21/03/11
 
+    path('downloadList/', views.prj1App_downloadList.as_view(), name='prj1App_downloadList'), #khlee add 21/03/17
+    path('download/<int:id>/', views.download, name='download'), #khlee add 21/03/17
+    
+    
 ]

@@ -26,8 +26,7 @@ SECRET_KEY = 'j)1(bd805xc8d!*npnt799x@2_plw0_dj^cbt02cj^k@%u^w55'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*'] #khlee mod 21/03/18
 
 # Application definition
 
@@ -54,9 +53,28 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_downloadview.SmartDownloadMiddleware", #khlee add 21/03/17
 ]
 
 ROOT_URLCONF = 'proj_skj1_django.urls'
+
+
+#khlee add 21/03/17
+# Specific configuration for django_downloadview.SmartDownloadMiddleware.
+# BEGIN backend
+DOWNLOADVIEW_BACKEND = "django_downloadview.nginx.XAccelRedirectMiddleware"
+# END backend
+
+# BEGIN rules
+DOWNLOADVIEW_RULES = [
+    {
+        "source_url": "/media/nginx/",
+        "destination_url": "/nginx-optimized-by-middleware/",
+    },
+]
+# END rules
+
+
 
 TEMPLATES = [
     {

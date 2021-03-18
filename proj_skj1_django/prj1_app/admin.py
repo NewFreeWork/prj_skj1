@@ -37,3 +37,12 @@ class prj1_BlogAdmin(SummernoteModelAdmin):
     inlines = [BlogCommentsInline]
     
 admin.site.register(prj1_Blog, prj1_BlogAdmin) #khlee add 21/03/14
+
+
+#khlee add 21/03/17
+from .models import File, Message
+
+# Minimal registration of Models.
+admin.site.register(File)
+admin.site.register(Message)
+

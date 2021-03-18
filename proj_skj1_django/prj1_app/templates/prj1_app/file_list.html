@@ -1,0 +1,24 @@
+{% extends "prj1_base_generic.html" %}
+{% load static%}
+{%block content%}
+
+<div class="post-card-box">
+    <h1>Download list...</h1>
+</div>
+        
+{% if file_list %}
+    {% for file in file_list %}
+    
+        <div class="post-card-box">
+                <h2><a href="{{ file.get_absolute_url }}" class="link-post_list">{{ file.title }}</a></h2>
+                <p class="post-meta">({{file.post_date}})-{{ file.author }}</p>
+                <div class="post-list-content">내용 공사중...</div>
+                <div class="page-tag">
+                    <a href="" class="tag" style="color: #faa;">#태그 공사중...</a>
+                </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>There are no download file.</p>
+{% endif %}       
+{%endblock%}
