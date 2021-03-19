@@ -58,7 +58,7 @@ class prj1_Blog(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(prj1_BlogAuthor, on_delete=models.SET_NULL, null=True)
       # Foreign Key used because Blog can only have one author/User, but bloggsers can have multiple blog posts.
-    description = models.TextField(max_length=2000, help_text="Enter you blog text here.")
+    description = models.TextField(max_length=60000, help_text="Enter you blog text here.")
     
 #    slug = models.SlugField(max_length=201, db_index=True, unique=True, allow_unicode=True)
     publish = models.BooleanField(default=True)
@@ -149,13 +149,7 @@ class Message(models.Model):
         related_name='sent_inbox_messages',
         on_delete=models.CASCADE,
     )
-    parent = models.ForeignKey(
-        'self',
-        null=True,
-        blank=True,
-        related_name='replies',
-        on_delete=models.CASCADE
-    )
+    parent = models.ForeignKey('self', null=True, blank=True, related_name='replies', on_delete=models.CASCADE)
     def __str__(self):
         return self.title or self.message
     

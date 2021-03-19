@@ -92,19 +92,9 @@
                 <h2 class="recent-title">Recent post</h2>
                 <div class="recent-list">
                 </div>
-                     
             </div>
-            
-                
-            
         </div>
-        
-        
     </div>
-    
-    
-
-    
 </article>
 
 
@@ -112,17 +102,6 @@
 
 
 <div class="post-card-box">
-    <h1>{{ prj1_blog.title }}</h1>
-    <p><strong>Post date : </strong> {{ prj1_blog.post_date }}</p>
-
-    {%comment%}
-    <p><strong>Author:</strong> <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a></p>
-    {%endcomment%}
-
-    <p><strong>Content : </strong></p>
-    <p style="white-space:pre-wrap;">{{ prj1_blog.description }}</p>
-
-    
     <div style="margin-left:20px;margin-top:20px">
         <h4>Comments</h4>
 
@@ -145,7 +124,6 @@
 
 
 {%endblock%}
-
 {%block pagination%}
 {%endblock%}
 

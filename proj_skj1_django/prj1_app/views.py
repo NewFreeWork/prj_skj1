@@ -181,7 +181,7 @@ def download(request, id):
     file_name = file.file.name
     # Let NGINX handle it
     response['Content-Type'] = ''
-    response['X-Accel-Redirect'] = f'/{file.file.url}'
+    response['X-Accel-Redirect'] = f'{file.file.url}'
 #    response['Content-Disposition'] = 'attachment; filename="{}"'.format(file_name)
     return response
 
