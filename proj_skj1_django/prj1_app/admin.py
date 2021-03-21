@@ -33,14 +33,21 @@ class prj1_BlogAdmin(SummernoteModelAdmin):
     """
     summernote_fields = '__all__'
     
-    list_display = ('title', 'author', 'post_date')
+    list_display = ('title', 'author', 'post_date', 'tag_list') #khlee mod 21/03/21
     inlines = [BlogCommentsInline]
+    
+    def get_queryset(self, request): #khlee add 21/03/21
+        return super().get_queryset(request).prefetch_related('tags')
+    def tag_list(self, obj): #khlee add 21/03/21
+        return ','.join(o.name for o in obj.tags.all())
+    
     
 admin.site.register(prj1_Blog, prj1_BlogAdmin) #khlee add 21/03/14
 
 
 #khlee add 21/03/17
 from .models import File, Message
+
 
 # Minimal registration of Models.
 admin.site.register(File)

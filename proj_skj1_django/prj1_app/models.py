@@ -51,6 +51,8 @@ class prj1_BlogAuthor(models.Model):
         return self.user.username
 
 
+from taggit.managers import TaggableManager #khlee add 21/03/20
+    
 class prj1_Blog(models.Model):
     
     #Model representing a blog post.
@@ -69,6 +71,8 @@ class prj1_Blog(models.Model):
     
     objects = EntryQuerySet.as_manager()
     
+    
+    tags = TaggableManager(blank=True) #khlee add 21/03/20
     
     class Meta:
         ordering = ["-post_date"]

@@ -186,3 +186,23 @@ def download(request, id):
     return response
 
 
+#khlee add 21/03/21
+class TagCloudTV(generic.TemplateView):
+    template_name = 'taggit/taggit_cloud.html'
+
+
+class TaggedObjectLV(generic.ListView):
+    template_name = 'taggit/taggit_post_list.html'
+    model = prj1_Blog
+
+    def get_queryset(self):
+        return prj1_Blog.objects.filter(tags__name=self.kwargs.get('tag'))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tagname'] = self.kwargs['tag']
+        return context
+    
+    
+
+

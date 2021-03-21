@@ -65,6 +65,40 @@
                 <div class="page-tag">
                     <span>Tags:</span>
                 </div>
+                
+                
+                
+            
+               
+                <div>
+                    <b>TAGS</b> <i class="fas fa-tag"></i>
+                    {% load taggit_templatetags2_tags %} <!--taggit_templatetag2_tags 모듈을 가져온다-->
+                
+
+
+                    {% get_tags_for_object prj1_blog as "tags" %}
+            
+
+                    {% for tag in tags %}
+
+                    {%comment%}                                      
+                        <a href="{% url 'prj1_Blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
+                    {%endcomment%}                         
+                    
+                    {% endfor %}
+                       
+                    &emsp;
+                
+                    {%comment%}
+                    <a href="{% url 'prj1_Blog:tag_cloud' %}"><span class="btn btn-info btn-sm">TagCloud</span></a>
+                    {%endcomment%} 
+                
+                </div>
+                
+                
+                
+                
+                
                 <div class="page-share">
                     <span>Share:</span>
                 </div>

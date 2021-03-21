@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     #Add config for Blog application
     #'blog.apps.BlogConfig', 
     'django_summernote', #khlee add 21/03/14
+    
+    'taggit.apps.TaggitAppConfig', #khlee add 21/03/20
+    'taggit_templatetags2', #khlee add 21/03/20    
+    
 ]
 
 MIDDLEWARE = [
@@ -53,10 +57,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_downloadview.SmartDownloadMiddleware", #khlee add 21/03/17
+    "django_downloadview.SmartDownloadMiddleware", #khlee add 21/03/17    
 ]
 
 ROOT_URLCONF = 'proj_skj1_django.urls'
+
 
 
 #khlee add 21/03/17
@@ -88,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            
         },
     },
 ]
