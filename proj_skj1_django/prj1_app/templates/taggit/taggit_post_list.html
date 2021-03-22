@@ -1,15 +1,12 @@
-{% extends "base_generic.html" %}
-
+{% extends "prj1_base_generic.html" %}   
 {% block content %}
 
-
-<ul>
-{% for tag in tags %}
-<li>{{tag}} ({{tag.num_times}})</li>
-{% endfor %}
-</ul>
-
-
+<h1>Posts for tag - {{tagname}} </h1>
+{%for prj1_blog in object_list%}
+    <h2><a href="{{ prj1_blog.get_absolute_url }}" class="link-post_list">{{prj1_blog.title}}</a></h2>
+    {{prj1_blog.post_date}}
+<p>{{prj1_blog.description|safe}}</p>
+{%endfor%}
 
 {% endblock %}
 

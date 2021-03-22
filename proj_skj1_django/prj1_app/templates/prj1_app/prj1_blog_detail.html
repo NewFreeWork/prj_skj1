@@ -57,7 +57,7 @@
             <div class="header-page">
                 <h1 class="page-title">{{ prj1_blog.title }}</h1>
                 <div class="page-date">{{ prj1_blog.post_date }}</div>
-                    {{ prj1_blog.description|safe }}
+                <p>{{ prj1_blog.description|safe }}</p>
             </div>
             
             
@@ -74,17 +74,9 @@
                     <b>TAGS</b> <i class="fas fa-tag"></i>
                     {% load taggit_templatetags2_tags %} <!--taggit_templatetag2_tags 모듈을 가져온다-->
                 
-
-
-                    {% get_tags_for_object prj1_blog as "tags" %}
-            
-
+                    {% get_tags_for_object object as "tags" %}
                     {% for tag in tags %}
-
-                    {%comment%}                                      
-                        <a href="{% url 'prj1_Blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
-                    {%endcomment%}                         
-                    
+                        <a href="{% url 'tagged_object_list' tag.name %}">{{tag.name}}</a>
                     {% endfor %}
                        
                     &emsp;

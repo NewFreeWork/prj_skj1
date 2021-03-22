@@ -73,10 +73,27 @@
                 <h2><a href="{{ prj1_blog.get_absolute_url }}" class="link-post_list">{{ prj1_blog.title }}</a></h2>
                 <p class="post-meta">({{prj1_blog.post_date}})-{{ prj1_blog.author }}</p>
                 <div class="post-list-content">내용 공사중...</div>
+            
+            
                 <div class="page-tag">
-                    <a href="" class="tag" style="color: #faa;">#태그 공사중...</a>
+                      
+                    
+                    
+                    {% load taggit_templatetags2_tags %} <!--taggit_templatetag2_tags 모듈을 가져온다-->
+                
+                     
+                    {% get_tags_for_object prj1_blog as "tags" %}
+                    
+                   
+                    {% for tag in tags %}
+                        <a href="{% url 'tagged_object_list' tag.name %}" class="tag" style="color: #faa;">#{{tag.name}}</a>
+                    {% endfor %}
+
+                    
                 </div>
 
+            
+            
                 {%comment%}    
                 <a href="{{ prj1_blog.get_absolute_url }}">{{ prj1_blog.title }}</a> ({{prj1_blog.post_date}})-{{ prj1_blog.author }}
                 {%endcomment%}
