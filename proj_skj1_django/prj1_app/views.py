@@ -204,5 +204,41 @@ class TaggedObjectLV(generic.ListView):
         return context
     
     
+#khlee add 21/03/25
+import json
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def searchData(request):
+    qs = ''
+    data = ''
+    mimetype = ''
+
+    if 'searchinputs' in request.POST:
+        print('get post')
+        findthis = request.POST['searchinputs']
+        print(findthis)
+        
+        qs = prj1_Blog.objects.all()
+        
+        if findthis:
+            search_qs = qs.filter(title__icontains=findthis)
+            result = []
+            print(search_qs)
+            
+            for r in search_qs:
+                result.append(r.id)
+                result.append(r.title)
+            
+            data = json.dumps(result)
+            print(data)
+        else:
+            data = 'fail'
+        
+    mimetype = 'application/json'
+    
+    return HttpResponse(data,mimetype)
+
+    
 
 

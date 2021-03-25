@@ -151,11 +151,13 @@
                             </span>
                         </div>
                     {% endif %}
+                
                 {%comment%}
                 <div class="pagination clearfix">
                     <a href="/page2/" class="next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 {%endcomment%}
+                
                 {%endblock%}
                 
             </div> <!-- End Wrapper -->
@@ -175,6 +177,12 @@
 
     <!-- JS -->
     <script src="{%static 'prj1_app/js/jquery-3.2.1.min.js'%}"></script>
+    <script src="{%static 'prj1_app/js/prj1app_search.js'%}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           searchajax(); 
+        });
+    </script>
     <script src="{%static 'prj1_app/js/main.js'%}"></script>
     
 </body>

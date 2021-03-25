@@ -35,4 +35,6 @@ urlpatterns = [
     
     path('tag/', views.TagCloudTV.as_view(), name='tag_cloud'), #khlee add 21/03/21
     path('tag/<str:tag>', views.TaggedObjectLV.as_view(), name='tagged_object_list'), #khlee add 21/03/21
+    
+    path('browser/searchData/', views.searchData, name='searchData'), #khlee add 21/03/25
 ]
