@@ -46,8 +46,17 @@ INSTALLED_APPS = [
     
     'taggit.apps.TaggitAppConfig', #khlee add 21/03/20
     'taggit_templatetags2', #khlee add 21/03/20    
-    
+
+    'django.contrib.sites', #khlee add 21/03/28
+    'django_comments_xtd', #khlee add 21/03/28
+    'django_comments', #khlee add 21/03/28    
 ]
+
+#khlee add 21/03/28
+COMMENTS_APP = 'django_comments_xtd'
+COMMENTS_XTD_MAX_THREAD_LEVEL = 1
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

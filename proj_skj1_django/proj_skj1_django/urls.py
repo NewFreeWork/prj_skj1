@@ -94,6 +94,8 @@ urlpatterns += [
     
     path('prj1App/', include(urls_prj1App)), #khlee add 21/03/09
     path('summernote/', include('django_summernote.urls')), #khlee add 21/03/14
+    url(r'^comments/', include('django_comments_xtd.urls')), #khlee add 21/03/28
+    
     path('', RedirectView.as_view(url='/prj1App/', permanent=False)), #khlee add 21/03/09
 #    path('', include(urls_prj1App)), #khlee add 21/03/11
         
