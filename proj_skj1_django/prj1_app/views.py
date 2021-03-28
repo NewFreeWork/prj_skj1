@@ -154,10 +154,15 @@ from django.http import HttpResponse
 
 class prj1App_downloadList(generic.ListView):
     model = File
-    paginate_by = 5
+    paginate_by = 10
 
 
 
+#khlee add 21/03/28
+class prj1App_downloadListDetail(generic.DetailView):
+    model = File
+    
+    
 def download(request, id):
     file = get_object_or_404(File, id=id)
     messages = file.messages.all()
@@ -189,7 +194,13 @@ def download(request, id):
 #khlee add 21/03/21
 class TagCloudTV(generic.TemplateView):
     template_name = 'taggit/taggit_cloud.html'
+#    model = prj1_Blog
 
+#    def get_context_data(self, **kwargs):
+#        context = super().get_context_data(**kwargs)
+#        context['File'] = File.objects.all()
+#        return context
+    
 
 class TaggedObjectLV(generic.ListView):
     template_name = 'taggit/taggit_post_list.html'
@@ -201,6 +212,7 @@ class TaggedObjectLV(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tagname'] = self.kwargs['tag']
+        context['File_object_list'] = File.objects.filter(tags__name=self.kwargs.get('tag'))
         return context
     
     

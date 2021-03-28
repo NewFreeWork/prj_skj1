@@ -1,12 +1,57 @@
 {% extends "prj1_base_generic.html" %}   
 {% block content %}
 
-<h1>Posts for tag - {{tagname}} </h1>
-{%for prj1_blog in object_list%}
-    <h2><a href="{{ prj1_blog.get_absolute_url }}" class="link-post_list">{{prj1_blog.title}}</a></h2>
-    {{prj1_blog.post_date}}
-<p>{{prj1_blog.description|safe}}</p>
-{%endfor%}
+<div class="content wrapper">
+    <section class="blog-tags">
 
+    {%comment%}
+    {%for tag in tags%}
+        <h2>{{tag.name}}<br></h2>
+        <div class="tag-list">
+            <span><a href="/android/BLE-beacon-practice/">iBeacon 만들고 비콘 인식 앱 제작</a></span>
+            <small><span>| 04 Sep 2018</span></small>
+        </div>
+    {%endfor%}
+    {%endcomment%}
+        
+
+<h1>Posts for tag - {{tagname}} </h1>
+      
+{% if object_list %}        
+    {%for prj1_blog in object_list%}
+        <div class="tag-list">
+            <span><a href="{{ prj1_blog.get_absolute_url }}" class="link-post_list">{{prj1_blog.title}}</a></span>
+            <small><span>| {{prj1_blog.post_date}}</span></small>
+            {%comment%}
+            <p>{{prj1_blog.description|safe}}</p>
+            {%endcomment%}
+        </div>
+    {%endfor%}
+
+{% else %}
+    {%comment%}
+    <p>There are no blogs.</p>
+    {%endcomment%}
+{% endif %}  
+        
+        
+{%if File_object_list %}
+        {%for file in File_object_list%}
+        <div class="tag-list">
+            <span><a href="{% url 'prj1App_downloadDetail' file.id %}">{{file.title}}</a></span>
+            <small><span>| {{file.upload_date}}</span></small>
+        </div>
+        {%endfor%}
+{%endif%}
+
+{%comment%}     
+{%endcomment%}        
+        
+        
+        
+    </section>
+</div>
+        
+        
 {% endblock %}
 

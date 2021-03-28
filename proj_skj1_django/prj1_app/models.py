@@ -116,7 +116,14 @@ class prj1_BlogComment(models.Model):
     
 class File(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
+    author = models.ForeignKey(prj1_BlogAuthor, on_delete=models.SET_NULL, null=True)
+
+    description = models.TextField(max_length=60000, help_text="Enter you blog text here.")
+#    slug = models.SlugField(max_length=201, db_index=True, unique=True, allow_unicode=True)
+    publish = models.BooleanField(default=True)    
+    
     description = models.TextField(blank=True, null=True)
+    
     upload_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     # file will be saved to MEDIA_ROOT/uploads/2015/01/30
@@ -126,6 +133,9 @@ class File(models.Model):
         related_name='owner_files',
         on_delete=models.CASCADE,
     )
+    
+    tags = TaggableManager(blank=True) #khlee add 21/03/28
+    
     def __str__(self):
         return self.title or self.description or self.file.url
     def get_absolute_url(self):

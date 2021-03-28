@@ -7,17 +7,38 @@
 </div>
         
 {% if file_list %}
+
+
+
+
+    {% for file in file_list %}
+    <div class="post-card-box">
+        {{ file.id }}. 
+        {%comment%}
+        <a href="{% url 'download' file.id %}" class="link-post_list">{{ file.title }} |</a>
+        {%endcomment%}
+        <a href="{% url 'prj1App_downloadDetail' file.id %}">{{ file.title }} |</a>
+        {{ file.upload_date }} | 
+        {{ file.author }}
+    </div>
+    {% endfor %}
+
+
+{%comment%}
+
     {% for file in file_list %}
     
         <div class="post-card-box">
                 <h2><a href="{{ file.get_absolute_url }}" class="link-post_list">{{ file.title }}</a></h2>
-                <p class="post-meta">({{file.post_date}})-{{ file.author }}</p>
+                <p class="post-meta">{{file.upload_date}} | {{ file.author }}</p>
                 <div class="post-list-content">내용 공사중...</div>
                 <div class="page-tag">
                     <a href="" class="tag" style="color: #faa;">#태그 공사중...</a>
                 </div>
         </div>
     {% endfor %}
+{%endcomment%}
+
 {% else %}
     <p>There are no download file.</p>
 {% endif %}       

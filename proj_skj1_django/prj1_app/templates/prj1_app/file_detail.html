@@ -49,15 +49,15 @@
 
 <article class="article-page">
     <div class="page-image">
-        <div class="cover-image" style="background: url({%static 'prj1_app/images/backgroundTestimg.jpeg'%}) center no-repeat; background-size: 100%;"></div>
+        <div class="cover-image" style="background: url({%static 'prj1_app/images/download_background.jpeg'%}) center no-repeat; background-size: 100%;"></div>
     </div>
     
     <div class="wrapper">
         <div class="page-content">
             <div class="header-page">
-                <h1 class="page-title">{{ prj1_blog.title }}</h1>
-                <div class="page-date">{{ prj1_blog.post_date }}</div>
-                <p>{{ prj1_blog.description|safe }}</p>
+                <h1 class="page-title">{{ file.title }}</h1>
+                <div class="page-date">{{ file.upload_date }}</div>
+                <p>{{ file.description|safe }}</p>
             </div>
             
             
@@ -70,7 +70,11 @@
                 {%endcomment%}
                 
                 
+                <a href="{% url 'prj1App_download' file.id %}"><input type="submit" value="첨부파일 다운로드"></a>
+                <br><br>
+                
                 <div class="page-tag">
+                    
                     <div>
                         <span>TAGS: </span> <i class="fas fa-tag"></i>
                         {% load taggit_templatetags2_tags %} <!--taggit_templatetag2_tags 모듈을 가져온다-->
@@ -113,12 +117,13 @@
                 </div>
             </section>               
 
-            
+            {%comment%}
             <div class="recent-box">
                 <h2 class="recent-title">Recent post</h2>
                 <div class="recent-list">
                 </div>
             </div>
+            {%endcomment%}
         </div>
     </div>
 </article>
@@ -126,7 +131,7 @@
 
 
 
-
+{%comment%}
 <div class="post-card-box">
     <div style="margin-left:20px;margin-top:20px">
         <h4>Comments</h4>
@@ -145,7 +150,7 @@
     </div>   
     
 </div>
-
+{%endcomment%}
 
 
 

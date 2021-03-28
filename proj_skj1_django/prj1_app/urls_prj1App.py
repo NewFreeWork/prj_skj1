@@ -31,7 +31,8 @@ urlpatterns = [
     path('BlogDetail/<int:pk>/comment/', views.prj1App_BlogCommentCreate.as_view(), name='prj1App_blog_comment'), #khlee add 21/03/11
 
     path('downloadList/', views.prj1App_downloadList.as_view(), name='prj1App_downloadList'), #khlee add 21/03/17
-    path('download/<int:id>/', views.download, name='download'), #khlee add 21/03/17
+    path('downloadList/<int:pk>', views.prj1App_downloadListDetail.as_view(), name='prj1App_downloadDetail'), #khlee add 21/03/28
+    path('download/<int:id>/', views.download, name='prj1App_download'), #khlee add 21/03/17
     
     path('tag/', views.TagCloudTV.as_view(), name='tag_cloud'), #khlee add 21/03/21
     path('tag/<str:tag>', views.TaggedObjectLV.as_view(), name='tagged_object_list'), #khlee add 21/03/21

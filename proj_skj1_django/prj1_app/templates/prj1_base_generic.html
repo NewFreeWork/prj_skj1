@@ -59,9 +59,11 @@
                                 
                                 {% if user.is_active %}
                                 <li><a href="{%url 'login' %}"> <span class="glyphicon glyphicon-heart"></span><i class="fa fa-lock-open"></i> {{user.username}}</a></li>
-                                <!-- <li><a href="{% url 'logout' %}">Logout</a></li> -->
-                                <li><a href="{% url 'prj1App_blog_create' %}"><i class="fa fa-file-alt"></i> blog post</a></li>
                                 
+                                {%comment%}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                <li><a href="{% url 'prj1App_blog_create' %}"><i class="fa fa-file-alt"></i> blog post</a></li>
+                                {%endcomment%}
                                 
                                 {% else %}
                                 <li><a href="{%url 'login' %}"> <span class="glyphicon glyphicon-user"></span><i class="fa fa-lock"></i> Login</a></li>
@@ -80,11 +82,11 @@
                                 <li><a href="">Tags</a></li>
                                 <li><a href="/prj1App_about">About</a></li>
                                 -->
-                                <li><a href="{% url 'prj1App_downloadList' %}">download list</a></li>
+                                <li><a href="{% url 'prj1App_downloadList' %}">Download</a></li>
                                 <li><a href="{% url 'prj1App_category2' %}">category 2</a></li>
                                 <li><a href="{% url 'prj1App_testLink1' %}">testLink 1</a></li>
                                 <li><a href="{% url 'prj1App_testLink2' %}">testLink 2</a></li>
-                                <li><a href="">Tags</a></li>
+                                <li><a href="{% url 'tag_cloud' %}">Tag cloud</a></li>
                                 <li><a href="{% url 'prj1App_about' %}">About</a></li>
                             </ul>
                         </nav>

@@ -50,6 +50,10 @@ from .models import File, Message
 
 
 # Minimal registration of Models.
-admin.site.register(File)
+class FileAdmin(SummernoteModelAdmin): #khlee add 21/03/27
+    summernote_fields = '__all__'
+
+#admin.site.register(File)
+admin.site.register(File, FileAdmin) #khlee add 21/03/27
 admin.site.register(Message)
 
