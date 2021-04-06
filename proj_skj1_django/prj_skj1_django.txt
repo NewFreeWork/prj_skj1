@@ -8,7 +8,7 @@
 
 *prj_skj1 
 django 슈퍼유저 설정
-python mange.py createsuperuser 
+python manage.py createsuperuser 
 
 admin username : admin
 admin password : password123
@@ -106,6 +106,13 @@ create database proj_skj1_django;
 create user skj1 with password 'skj1database';
 alter role skj1 set client_encoding to 'utf-8';
 alter role skj1 set timezone to 'asia/seoul';
+set client_encoding to 'utf8'; (utf8에러나올때)
+\l (db리스트출력)
+\dt (테이블리스트 출력)
+\c db명 (db로 들어가기)
+\d 테이블명 (테이블내용 상세표시)
+drop database 데이터베이스이름 (데이터베이스 삭제)
+
 
 
 

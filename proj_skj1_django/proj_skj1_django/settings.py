@@ -55,6 +55,20 @@ INSTALLED_APPS = [
 #khlee add 21/03/28
 COMMENTS_APP = 'django_comments_xtd'
 COMMENTS_XTD_MAX_THREAD_LEVEL = 1
+COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')
+
+#khlee add 21/04/06
+COMMENTS_XTD_APP_MODEL_OPTIONS = {
+    'default': {
+        'allow_flagging': True,
+        'allow_feedback': True,
+        'show_feedback': False,
+        'who_can_post': 'all'
+    }
+}
+
+
+
 
 #khlee add 21/03/29
 # Either enable sending mail messages to the console:
@@ -197,3 +211,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = '/' # 로그인에 성공했을 때 리다이렉트로 연결되는 URL 지정.
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SITE_ID = 1 #khlee add 21/03/31 Site matching query does not exist. 에러발생시 추가

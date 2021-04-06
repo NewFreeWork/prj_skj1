@@ -1,6 +1,7 @@
 {% extends "prj1_base_generic.html" %} 
 
 {% load comments %}
+{% load comments_xtd %}
 
 {% load static %}
 {% block addheader %}
@@ -36,6 +37,8 @@
 
 <link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shCore.css'%}">
 <link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shThemeDefault.css'%}">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script type="text/javascript"> 
     SyntaxHighlighter.defaults['tooblar']=false;
@@ -128,8 +131,7 @@
 
 
 
-
-
+{%comment%}
 <div class="post-card-box">
     <div style="margin-left:20px;margin-top:20px">
         <h4>Comments</h4>
@@ -149,8 +151,19 @@
     
 </div>
 
+{%endcomment%}
 
 
+
+
+
+<div class="pb-3">
+    <h1 class="page-header text-center">{{object.title}}</h1>
+    <p class="small text-center">{{object.publich|date:"l, j F Y"}}</p>
+</div>
+<div>
+    {{object.body|linebreaks}}
+</div>
 
 
 
@@ -166,12 +179,16 @@
   ha{{ comment_count|pluralize:"s,ve" }} been posted.
 </div>
 
+
+
 {% if comment_count %}
 <hr/>
 <div class="comments">
   {% render_comment_list for object %}
 </div>
 {% endif %}
+
+
 
 <div class="card card-block mb-5">
   <div class="card-body">
@@ -182,8 +199,7 @@
 
 
 
-
-
+{%comment%}
     {% for object in object_list %}
 
     {% get_comment_count for object as comment_count %}
@@ -194,7 +210,7 @@
     </p>
 
     {% endfor %}
-
+{%endcomment%}
 
 
 
