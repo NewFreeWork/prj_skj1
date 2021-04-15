@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 #khlee add 21/03/28
 COMMENTS_APP = 'django_comments_xtd'
 COMMENTS_XTD_MAX_THREAD_LEVEL = 1
+
 COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')
 
 #khlee add 21/04/06

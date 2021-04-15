@@ -3,6 +3,11 @@
 {% load comments %}
 {% load comments_xtd %}
 
+
+{%comment%}
+{%endcomment%}
+
+
 {% load static %}
 {% block addheader %}
 
@@ -38,7 +43,16 @@
 <link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shCore.css'%}">
 <link type="text/css" rel="Stylesheet" href="{%static 'prj1_app/css/shThemeDefault.css'%}">
 
+
+{%comment%}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{%static 'prj1_app/css/bootstrap.min.css'%}">    
+{%endcomment%}
+
+
+
+
+
 
 <script type="text/javascript"> 
     SyntaxHighlighter.defaults['tooblar']=false;
@@ -131,32 +145,6 @@
 
 
 
-{%comment%}
-<div class="post-card-box">
-    <div style="margin-left:20px;margin-top:20px">
-        <h4>Comments</h4>
-
-        {% for comment in prj1_blog.prj1_blogcomment_set.all %}
-            <hr>
-            <p>{{comment.author}} ({{comment.post_date}}) - {{comment.description}}</p>
-        {% endfor %}
-        
-        <hr>
-        {% if user.is_authenticated %}
-          <a href="{% url 'prj1App_blog_comment' prj1_blog.id %}">Add a new comment</a></p>
-        {% else %}
-          <p><a href="{% url 'login'%}?next={{request.path}}">Login</a> to add a new comment</p>
-        {% endif %} 
-    </div>   
-    
-</div>
-
-{%endcomment%}
-
-
-
-
-
 <div class="pb-3">
     <h1 class="page-header text-center">{{object.title}}</h1>
     <p class="small text-center">{{object.publich|date:"l, j F Y"}}</p>
@@ -181,36 +169,25 @@
 
 
 
-{% if comment_count %}
-<hr/>
-<div class="comments">
-  {% render_comment_list for object %}
-</div>
-{% endif %}
-
-
-
+    
 <div class="card card-block mb-5">
   <div class="card-body">
     <h4 class="card-title text-center pb-3">Post your comment</h4>
-      {% render_comment_form for object %}
+      <div class="well">
+        {% render_comment_form for object %}
+      </div>
   </div>
+</div>    
+    
+    
+
+{% if comment_count %}
+
+<div class="comments">
+    {% render_xtdcomment_tree for object %}      
 </div>
+{% endif %}
 
-
-
-{%comment%}
-    {% for object in object_list %}
-
-    {% get_comment_count for object as comment_count %}
-    <p class="date">Published {{ object.publish }}
-      {% if comment_count %}
-      &sdot;&nbsp;{{ comment_count }} comment{{ comment_count|pluralize }}
-      {% endif %}
-    </p>
-
-    {% endfor %}
-{%endcomment%}
 
 
 
