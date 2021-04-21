@@ -39,7 +39,7 @@ class prj1_BlogAuthor(models.Model):
         ordering = ["user","bio"]
 
 #    def get_absolute_url(self):
-        
+
         #Returns the url to access a particular blog-author instance.
         
 #        return reverse('blogs-by-author', args=[str(self.id)])
@@ -70,7 +70,7 @@ class prj1_Blog(models.Model):
     modified = models.DateTimeField(auto_now=True)
     
     objects = EntryQuerySet.as_manager()
-    
+
     
     tags = TaggableManager(blank=True) #khlee add 21/03/20
     
@@ -84,6 +84,9 @@ class prj1_Blog(models.Model):
     def __str__(self):
         #String for representing the Model object.
         return self.title
+    def contents_summary(self):
+        return self.description[:20]
+    
 
     
 #khlee add 21/03/11    

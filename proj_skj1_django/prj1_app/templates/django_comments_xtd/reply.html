@@ -8,6 +8,9 @@
 {%endcomment%}
 
 {% block content %}
+
+<div class="post-card-box">
+
 <div class="container">
   <div class="mb-4">
     <h3 class="text-center">{% trans "Reply to comment" %}</h3>
@@ -16,7 +19,11 @@
   <div class="row">
     <div class="offset-md-1 col-md-10">
       <div class="media">
+          
+        {%comment%}
         <div class="mr-3">{{ comment.user_email|xtd_comment_gravatar }}</div>
+        {%endcomment%}
+          
         <div class="media-body">
           <div class="comment pb-3">
             <h6 class="mb-1 small">
@@ -38,4 +45,7 @@
     </div>
   </div>
 </div>
+    
+</div>    
+    
 {% endblock %}
