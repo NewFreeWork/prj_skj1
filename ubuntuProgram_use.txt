@@ -13,4 +13,36 @@ git fetch github
 git pull origin
 git push –u origin master
 
+*git lab설치
+https://typingdog.tistory.com/36 참고사이트
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates 
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash 
+sudo EXTERNAL_URL="http://gitlab.example.com/" apt-get install gitlab-ce
+설치 이후 /etc/gitlab/gitlab.rb 에서 external_url 에서 내 pc설정의 아이피 포트를 변경한다.(현재 127.0.0.1:8080)
+sudo gitlab-ctl reconfigure 깃랩 서비스 재시작 
+
+
+*gitlab삭제
+sudo gitlab-ctl uninstall
+sudo gitlab-ctl cleanse
+sudo gitlab-ctl remove-accounts
+sudo dpkg -P gitlab-ce || sudo yum -y remove gitlab-ce
+폴더도 삭제
+/opt/gitlab
+/var/opt/gitlab
+/etc/gitlab
+/var/log/gitlab
+/etc/yum.repos.d/gitlab 관련파일
+
+
+
+크롬으로 gitlab을 해야 문제가 없다??
+
+http://codeplane.iptime.org:90/
+admin관리계정:root
+비번:skjdlrlgjs
+
+내계정:kihunopha
+
 
