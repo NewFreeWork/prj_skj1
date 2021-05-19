@@ -38,6 +38,12 @@ sudo dpkg -P gitlab-ce || sudo yum -y remove gitlab-ce
 
 
 크롬으로 gitlab을 해야 문제가 없다??
+설치한 다음 
+sudo vim /etc/gitlab/gitlab.rb
+변경내용
+external_url 'http://codeplane.iptime.org:90'
+web_server['external_users'] = ['www-data']
+
 
 http://codeplane.iptime.org:90/
 admin관리계정:root
