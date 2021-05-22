@@ -65,3 +65,6 @@ admin관리계정:root
 
 
 nginx 서비스 재시작 : sudo service nginx restart
+
+*Macbook command
+서버접속 command+k
