@@ -24,43 +24,29 @@
 
 
 <div class="post-card-box">
+    <div class="content wrapper">
+        <section class="blog-tags">
 
+    <h1>TAG CLOUD</h1>
+    <br>
+            <ul class="tags">
+            <!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
+                {%load taggit_templatetags2_tags%}
+                {%get_tagcloud as tags%}
+                {%if tags%}
+                    {%for tag in tags%}
+                    <span class="tag-{{tag.weight|floatformat:0}}">
+                        <a href="{%url 'tagged_object_list' tag.name%}">{{tag.name}}({{tag.num_times}})</a>
+                    </span>
+                    <br>
+                    {%endfor%}
+                {%else%}
+                <p>There are no tag.</p>
+                {%endif%}
+            </ul>
 
-<div class="content wrapper">
-    <section class="blog-tags">
-    
-    
-<h1>TAG CLOUD</h1>
-<br>
-
-    <ul class="tags">
-    <!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
-        {%load taggit_templatetags2_tags%}
-        {%get_tagcloud as tags%}
-        {%for tag in tags%}
-            <span class="tag-{{tag.weight|floatformat:0}}">
-                <a href="{%url 'tagged_object_list' tag.name%}">{{tag.name}}({{tag.num_times}})</a>
-            </span>
-            <br>
-        {%endfor%}
-    </ul>
-
-
-
-{%comment%}
-    <div class="tag-cloud">
-        {%load taggit_templatetags2_tags%}
-        {%get_tagcloud as tags%}
-        {%for tag in tags%}
-        <span class="tag-{{tag.weight|floatformat:0}}">
-            <a href="{%url 'tagged_object_list' tag.name%}">{{tag.name}}({{tag.num_times}})<br></a>
-        </span>
-        {%endfor%}
+        </section>
     </div>
-{%endcomment%}
-    </section>
-</div>
-    
 </div>    
     
 {% endblock %}

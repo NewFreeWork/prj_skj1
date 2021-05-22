@@ -6,12 +6,21 @@
 :pip install -r requirements.txt 
 
 
-*prj_skj1 
+*prj_skj1 웹사이트 
 django 슈퍼유저 설정
 python manage.py createsuperuser 
 
 admin username : admin
 admin password : password123
+
+khlee
+skjdlrlgjs
+
+*prj_skj1 github
+khlee
+skjdlrlgjs
+
+
 
 
 *pip 관련
@@ -89,6 +98,8 @@ git push –u origin master
 
 
 
+
+
 *아이콘 변환 사이트
 https://convertico.com
 
@@ -112,8 +123,8 @@ set client_encoding to 'utf8'; (utf8에러나올때)
 \c db명 (db로 들어가기)
 \d 테이블명 (테이블내용 상세표시)
 drop database 데이터베이스이름 (데이터베이스 삭제)
-
-
+drop table 테이블이름 (테이블 삭제)
+drop table prj1_app_file cascade (prj1_app_file과 연결된 테이블도 같이 삭제)
 
 
 *블로그 쓸때 소스코드 작성법
@@ -124,7 +135,6 @@ drop database 데이터베이스이름 (데이터베이스 삭제)
 표현코드
 </pre>
 기타 옵션들이 있으니 확인후 사용할수 있음
-
 
 
 
