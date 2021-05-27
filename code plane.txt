@@ -17,6 +17,10 @@
 -1. 큰 프로젝트의 소프트웨어 발주하는 곳은 정부나 공공기관이 주이므로 이곳을 공략...
 
 
+3. server Operate
+
+
+
 *수익관련
 3명이 월500... 순수수익이 월2000정도 나와야 함...
 
@@ -56,9 +60,15 @@
 - 스타일북(sblee)
 
 
--codeplane 웹사이트 
---passwd:skjdlrlgjs
---서버구축 및 설치(khlee)
+3. codeplane 서버
+- http://codeplane.iptime.org
+- server passwd : skjdlrlgjs
+- gitlab
+-- admin관리계정 : root
+-- http://codeplane.iptime.org:90/
+- server router 접속주소
+-- http://codeplane.iptime.org:9090/
+
 
 
 --서버견적 및 구매(khlee) - 노트북으로 진행하면서 추이관찰이므로 일단 보류
