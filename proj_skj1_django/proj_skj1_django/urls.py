@@ -89,8 +89,6 @@ urlpatterns += [
 #    path('admin/', admin.site.urls),
     
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-
     
     path('prj1App/', include(urls_prj1App)), #khlee add 21/03/09
     path('summernote/', include('django_summernote.urls')), #khlee add 21/03/14
