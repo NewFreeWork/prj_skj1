@@ -63,9 +63,12 @@
 3. codeplane 서버
 - http://codeplane.iptime.org
 - server passwd : skjdlrlgjs
+
 - gitlab
 -- admin관리계정 : root
 -- http://codeplane.iptime.org:90/
+-- kihunopha : skjdlrlgjs
+
 - server router 접속주소
 -- http://codeplane.iptime.org:9090/
 
